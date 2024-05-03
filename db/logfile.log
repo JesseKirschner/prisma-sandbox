@@ -1,0 +1,447 @@
+/Users/Shared/DBngin/mysql/8.0.33/bin/mysqld, Version: 8.0.33 (MySQL Community Server - GPL). started with:
+Tcp port: 3307  Unix socket: /tmp/mysql_3307.sock
+Time                 Id Command    Argument
+2024-05-01T10:06:45.247866Z	    0 Execute	CREATE TABLE performance_schema.innodb_redo_log_files(
+`FILE_ID` BIGINT NOT NULL COMMENT 'Id of the file.',
+`FILE_NAME` VARCHAR(2000) NOT NULL COMMENT 'Path to the file.',
+`START_LSN` BIGINT NOT NULL COMMENT 'LSN of the first block in the file.',
+`END_LSN` BIGINT NOT NULL COMMENT 'LSN after the last block in the file.',
+`SIZE_IN_BYTES` BIGINT NOT NULL COMMENT 'Size of the file (in bytes).',
+`IS_FULL` TINYINT NOT NULL COMMENT '1 iff file has no free space inside.',
+`CONSUMER_LEVEL` INT NOT NULL COMMENT 'All redo log consumers registered on smaller levels than this value, have already consumed this file.'
+)engine = 'performance_schema'
+2024-05-01T10:06:51.185289Z	    8 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:06:51.187844Z	    8 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:06:51.188700Z	    9 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:06:51.188919Z	    9 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:06:51.189062Z	    8 Quit	
+2024-05-01T10:06:51.207016Z	    9 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`time` = ?
+2024-05-01T10:06:51.207388Z	    9 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+2024-05-01T10:07:26.565535Z	   10 Connect	root@localhost on  using TCP/IP
+2024-05-01T10:07:26.567119Z	   10 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-01T10:07:26.572675Z	   10 Query	SET character_set_results = NULL
+2024-05-01T10:07:26.574986Z	   10 Query	SET autocommit=1
+2024-05-01T10:07:26.578163Z	   10 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SET autocommit=1
+2024-05-01T10:07:26.593287Z	   10 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT DATABASE()
+2024-05-01T10:07:26.606073Z	   11 Connect	root@localhost on  using TCP/IP
+2024-05-01T10:07:26.606533Z	   11 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-01T10:07:26.621527Z	   11 Query	SET character_set_results = NULL
+2024-05-01T10:07:26.621910Z	   11 Query	SET autocommit=1
+2024-05-01T10:07:26.622614Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SET autocommit=1
+2024-05-01T10:07:26.623730Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT DATABASE()
+2024-05-01T10:07:26.657743Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW ENGINES
+2024-05-01T10:07:26.661118Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW CHARSET
+2024-05-01T10:07:26.668504Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW COLLATION
+2024-05-01T10:07:26.677411Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT @@GLOBAL.character_set_server,@@GLOBAL.collation_server
+2024-05-01T10:07:26.678015Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW PLUGINS
+2024-05-01T10:07:26.679824Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW VARIABLES LIKE 'lower_case_table_names'
+2024-05-01T10:07:26.687275Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ show databases
+2024-05-01T10:07:26.692245Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.TABLES t
+WHERE
+	t.TABLE_SCHEMA = 'information_schema'
+	AND t.TABLE_NAME = 'CHECK_CONSTRAINTS'
+2024-05-01T10:07:26.810636Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW FULL TABLES FROM prisma_sandbox
+2024-05-01T10:07:27.181566Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='Datetime' ORDER BY ORDINAL_POSITION
+2024-05-01T10:07:27.206023Z	   10 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT x.* FROM prisma_sandbox.Datetime x
+LIMIT 0, 200
+2024-05-01T10:07:27.215459Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='Datetime' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+2024-05-01T10:07:27.219827Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT kc.CONSTRAINT_NAME,kc.TABLE_NAME,kc.COLUMN_NAME,kc.ORDINAL_POSITION
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE kc WHERE kc.TABLE_SCHEMA='prisma_sandbox' AND kc.REFERENCED_TABLE_NAME IS NULL AND kc.TABLE_NAME='Datetime'
+ORDER BY kc.CONSTRAINT_NAME,kc.ORDINAL_POSITION
+2024-05-01T10:07:27.223872Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'prisma_sandbox'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'prisma_sandbox' AND TABLE_NAME='Datetime') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+2024-05-01T10:07:27.238244Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT DISTINCT A.REFERENCED_TABLE_SCHEMA AS PKTABLE_CAT,NULL AS PKTABLE_SCHEM, A.REFERENCED_TABLE_NAME AS PKTABLE_NAME, A.REFERENCED_COLUMN_NAME AS PKCOLUMN_NAME, A.TABLE_SCHEMA AS FKTABLE_CAT, NULL AS FKTABLE_SCHEM, A.TABLE_NAME AS FKTABLE_NAME, A.COLUMN_NAME AS FKCOLUMN_NAME, A.ORDINAL_POSITION AS KEY_SEQ,CASE WHEN R.UPDATE_RULE='CASCADE' THEN 0 WHEN R.UPDATE_RULE='SET NULL' THEN 2 WHEN R.UPDATE_RULE='SET DEFAULT' THEN 4 WHEN R.UPDATE_RULE='RESTRICT' THEN 1 WHEN R.UPDATE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS UPDATE_RULE,CASE WHEN R.DELETE_RULE='CASCADE' THEN 0 WHEN R.DELETE_RULE='SET NULL' THEN 2 WHEN R.DELETE_RULE='SET DEFAULT' THEN 4 WHEN R.DELETE_RULE='RESTRICT' THEN 1 WHEN R.DELETE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS DELETE_RULE, A.CONSTRAINT_NAME AS FK_NAME, R.UNIQUE_CONSTRAINT_NAME AS PK_NAME,7 AS DEFERRABILITY FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE A JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS B USING (CONSTRAINT_NAME, TABLE_NAME) JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS R ON (R.CONSTRAINT_NAME = B.CONSTRAINT_NAME AND R.TABLE_NAME = B.TABLE_NAME AND R.CONSTRAINT_SCHEMA = B.TABLE_SCHEMA) WHERE B.CONSTRAINT_TYPE = 'FOREIGN KEY' AND A.TABLE_SCHEMA = 'prisma_sandbox' AND A.TABLE_NAME='Datetime' AND A.REFERENCED_TABLE_SCHEMA IS NOT NULL ORDER BY A.REFERENCED_TABLE_SCHEMA, A.REFERENCED_TABLE_NAME, A.ORDINAL_POSITION
+2024-05-01T10:07:27.656376Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW TABLE STATUS FROM prisma_sandbox
+2024-05-01T10:07:27.699857Z	   11 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.SCHEMATA WHERE SCHEMA_NAME='prisma_sandbox'
+2024-05-01T10:07:27.701395Z	   10 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT SUM((DATA_LENGTH+INDEX_LENGTH))
+FROM INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_SCHEMA='prisma_sandbox'
+2024-05-01T10:07:27.816792Z	   10 Query	SELECT @@session.transaction_isolation
+2024-05-01T10:07:34.770471Z	   12 Connect	root@localhost on  using TCP/IP
+2024-05-01T10:07:34.779958Z	   12 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-01T10:07:34.791850Z	   12 Query	SET character_set_results = NULL
+2024-05-01T10:07:34.799449Z	   12 Query	SET autocommit=1
+2024-05-01T10:07:34.805556Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SET autocommit=1
+2024-05-01T10:07:35.032995Z	   12 Query	SELECT @@session.transaction_isolation
+2024-05-01T10:07:43.219155Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+LIMIT 0, 200
+2024-05-01T10:07:43.370089Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:07:43.494028Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:07:52.829924Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00Z'
+LIMIT 0, 200
+2024-05-01T10:07:52.872886Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:07:52.937430Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:07:54.377124Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+LIMIT 0, 200
+2024-05-01T10:07:54.407968Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:07:54.431279Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:08:22.353177Z	   13 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:08:22.356135Z	   13 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:08:22.356860Z	   14 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:08:22.357049Z	   14 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:08:22.357188Z	   13 Quit	
+2024-05-01T10:08:22.367690Z	   14 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:08:22.368253Z	   14 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:08:22.368307Z	   14 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-01T10:09:06.023568Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+LIMIT 0, 200
+2024-05-01T10:09:06.137705Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:09:06.198811Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:38:10.506228Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+LIMIT 0, 200
+2024-05-01T10:38:10.653960Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:38:10.772770Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:38:18.463955Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00Z'
+LIMIT 0, 200
+2024-05-01T10:38:18.550308Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:38:18.635485Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:38:21.798328Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00:000Z'
+LIMIT 0, 200
+2024-05-01T10:38:21.866506Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:38:21.972840Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:38:24.778907Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	`prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+LIMIT 0, 200
+2024-05-01T10:38:24.860272Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:38:24.968952Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:39:14.581894Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT
+	`prisma_sandbox`.`Datetime`.`id`,
+	`prisma_sandbox`.`Datetime`.`date`,
+	`prisma_sandbox`.`Datetime`.`time`
+FROM
+	`prisma_sandbox`.`Datetime`
+WHERE
+	(`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+		AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+LIMIT 0, 200
+2024-05-01T10:39:14.710653Z	   12 Query	SHOW WARNINGS
+2024-05-01T10:39:14.850804Z	   12 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-01T10:40:41.094768Z	   15 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:40:41.106896Z	   15 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:40:41.110050Z	   16 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:40:41.111830Z	   16 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:40:41.112354Z	   15 Quit	
+2024-05-01T10:40:41.127142Z	   16 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:40:41.127642Z	   16 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:40:41.127839Z	   16 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-01T10:49:02.107987Z	   17 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:49:02.120156Z	   17 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:02.127217Z	   18 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:49:02.127285Z	   18 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:02.127565Z	   17 Quit	
+2024-05-01T10:49:02.167235Z	   18 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:49:02.168013Z	   18 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:49:02.168166Z	   18 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-01T10:49:09.289015Z	   19 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:49:09.290646Z	   19 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:09.291523Z	   20 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:49:09.291900Z	   20 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:09.292005Z	   19 Quit	
+2024-05-01T10:49:09.293415Z	   20 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:49:09.293504Z	   20 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:49:09.293524Z	   20 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-01T10:49:36.236292Z	   21 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:49:36.239192Z	   21 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:36.240439Z	   22 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:49:36.240820Z	   22 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:49:36.240921Z	   21 Quit	
+2024-05-01T10:49:36.251764Z	   22 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:49:36.253966Z	   22 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:49:36.254182Z	   22 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-01T10:50:42.679503Z	   23 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:50:42.681411Z	   23 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:50:42.683374Z	   24 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:50:42.684304Z	   24 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:50:42.684449Z	   23 Quit	
+2024-05-01T10:50:42.692321Z	   24 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:50:42.692621Z	   24 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:50:42.692909Z	   24 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-01T10:53:29.076024Z	   25 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:53:29.088838Z	   25 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:29.095189Z	   26 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:53:29.095779Z	   26 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:29.096090Z	   25 Quit	
+2024-05-01T10:53:29.114119Z	   26 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:53:29.114379Z	   26 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-01T10:53:29.114540Z	   26 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-01T10:53:46.984131Z	   27 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:53:46.986693Z	   27 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:46.988799Z	   28 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:53:46.989572Z	   28 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:46.989760Z	   27 Quit	
+2024-05-01T10:53:47.000884Z	   28 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:53:47.001702Z	   28 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:53:47.001725Z	   28 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-01T10:53:58.443961Z	   29 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-01T10:53:58.445817Z	   29 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:58.447386Z	   30 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-01T10:53:58.448150Z	   30 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-01T10:53:58.448323Z	   29 Quit	
+2024-05-01T10:53:58.460473Z	   30 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:53:58.461535Z	   30 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-01T10:53:58.461576Z	   30 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-01T15:45:46.303702Z	   10 Quit	
+2024-05-01T15:45:46.526651Z	   11 Quit	
+2024-05-01T15:45:46.543119Z	   12 Quit	
+2024-05-03T08:07:40.338254Z	   31 Connect	root@localhost on  using TCP/IP
+2024-05-03T08:07:40.368792Z	   31 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-03T08:07:40.389756Z	   31 Query	SET character_set_results = NULL
+2024-05-03T08:07:40.390400Z	   31 Query	SET autocommit=1
+2024-05-03T08:07:40.391468Z	   31 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SET autocommit=1
+2024-05-03T08:07:40.398611Z	   31 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT DATABASE()
+2024-05-03T08:07:40.411131Z	   32 Connect	root@localhost on  using TCP/IP
+2024-05-03T08:07:40.411998Z	   32 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-03T08:07:40.412252Z	   32 Query	SET character_set_results = NULL
+2024-05-03T08:07:40.412416Z	   32 Query	SET autocommit=1
+2024-05-03T08:07:40.412715Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SET autocommit=1
+2024-05-03T08:07:40.414495Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT DATABASE()
+2024-05-03T08:07:40.416682Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT WORD FROM INFORMATION_SCHEMA.KEYWORDS WHERE RESERVED=1 ORDER BY WORD
+2024-05-03T08:07:40.503304Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW ENGINES
+2024-05-03T08:07:40.514430Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW CHARSET
+2024-05-03T08:07:40.531326Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW COLLATION
+2024-05-03T08:07:40.546525Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT @@GLOBAL.character_set_server,@@GLOBAL.collation_server
+2024-05-03T08:07:40.549979Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW PLUGINS
+2024-05-03T08:07:40.558319Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW VARIABLES LIKE 'lower_case_table_names'
+2024-05-03T08:07:40.572998Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ show databases
+2024-05-03T08:07:40.582732Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.TABLES t
+WHERE
+	t.TABLE_SCHEMA = 'information_schema'
+	AND t.TABLE_NAME = 'CHECK_CONSTRAINTS'
+2024-05-03T08:07:41.064399Z	   33 Connect	root@localhost on  using TCP/IP
+2024-05-03T08:07:41.065608Z	   33 Query	/* mysql-connector-j-8.2.0 (Revision: 06a1f724497fd81c6a659131fda822c9e5085b6c) */SELECT  @@session.auto_increment_increment AS auto_increment_increment, @@character_set_client AS character_set_client, @@character_set_connection AS character_set_connection, @@character_set_results AS character_set_results, @@character_set_server AS character_set_server, @@collation_server AS collation_server, @@collation_connection AS collation_connection, @@init_connect AS init_connect, @@interactive_timeout AS interactive_timeout, @@license AS license, @@lower_case_table_names AS lower_case_table_names, @@max_allowed_packet AS max_allowed_packet, @@net_write_timeout AS net_write_timeout, @@performance_schema AS performance_schema, @@sql_mode AS sql_mode, @@system_time_zone AS system_time_zone, @@time_zone AS time_zone, @@transaction_isolation AS transaction_isolation, @@wait_timeout AS wait_timeout
+2024-05-03T08:07:41.066087Z	   33 Query	SET character_set_results = NULL
+2024-05-03T08:07:41.066533Z	   33 Query	SET autocommit=1
+2024-05-03T08:07:41.066989Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SET autocommit=1
+2024-05-03T08:07:43.589191Z	   33 Query	SELECT @@session.transaction_isolation
+2024-05-03T08:14:55.884098Z	   34 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:14:55.907079Z	   34 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:14:55.916632Z	   35 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:14:55.917555Z	   35 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:14:55.917805Z	   34 Quit	
+2024-05-03T08:14:55.932149Z	   35 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:14:55.932842Z	   35 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:14:55.933081Z	   35 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:16:14.751809Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW FULL TABLES FROM prisma_sandbox
+2024-05-03T08:16:14.892038Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SHOW TABLE STATUS FROM prisma_sandbox
+2024-05-03T08:16:16.689631Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='_prisma_migrations' ORDER BY ORDINAL_POSITION
+2024-05-03T08:16:16.716179Z	   31 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT x.* FROM prisma_sandbox.`_prisma_migrations` x
+LIMIT 0, 200
+2024-05-03T08:16:16.778259Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='_prisma_migrations' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+2024-05-03T08:16:16.782923Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT kc.CONSTRAINT_NAME,kc.TABLE_NAME,kc.COLUMN_NAME,kc.ORDINAL_POSITION
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE kc WHERE kc.TABLE_SCHEMA='prisma_sandbox' AND kc.REFERENCED_TABLE_NAME IS NULL AND kc.TABLE_NAME='_prisma_migrations'
+ORDER BY kc.CONSTRAINT_NAME,kc.ORDINAL_POSITION
+2024-05-03T08:16:16.787469Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'prisma_sandbox'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'prisma_sandbox' AND TABLE_NAME='_prisma_migrations') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+2024-05-03T08:16:16.794170Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT DISTINCT A.REFERENCED_TABLE_SCHEMA AS PKTABLE_CAT,NULL AS PKTABLE_SCHEM, A.REFERENCED_TABLE_NAME AS PKTABLE_NAME, A.REFERENCED_COLUMN_NAME AS PKCOLUMN_NAME, A.TABLE_SCHEMA AS FKTABLE_CAT, NULL AS FKTABLE_SCHEM, A.TABLE_NAME AS FKTABLE_NAME, A.COLUMN_NAME AS FKCOLUMN_NAME, A.ORDINAL_POSITION AS KEY_SEQ,CASE WHEN R.UPDATE_RULE='CASCADE' THEN 0 WHEN R.UPDATE_RULE='SET NULL' THEN 2 WHEN R.UPDATE_RULE='SET DEFAULT' THEN 4 WHEN R.UPDATE_RULE='RESTRICT' THEN 1 WHEN R.UPDATE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS UPDATE_RULE,CASE WHEN R.DELETE_RULE='CASCADE' THEN 0 WHEN R.DELETE_RULE='SET NULL' THEN 2 WHEN R.DELETE_RULE='SET DEFAULT' THEN 4 WHEN R.DELETE_RULE='RESTRICT' THEN 1 WHEN R.DELETE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS DELETE_RULE, A.CONSTRAINT_NAME AS FK_NAME, R.UNIQUE_CONSTRAINT_NAME AS PK_NAME,7 AS DEFERRABILITY FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE A JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS B USING (CONSTRAINT_NAME, TABLE_NAME) JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS R ON (R.CONSTRAINT_NAME = B.CONSTRAINT_NAME AND R.TABLE_NAME = B.TABLE_NAME AND R.CONSTRAINT_SCHEMA = B.TABLE_SCHEMA) WHERE B.CONSTRAINT_TYPE = 'FOREIGN KEY' AND A.TABLE_SCHEMA = 'prisma_sandbox' AND A.TABLE_NAME='_prisma_migrations' AND A.REFERENCED_TABLE_SCHEMA IS NOT NULL ORDER BY A.REFERENCED_TABLE_SCHEMA, A.REFERENCED_TABLE_NAME, A.ORDINAL_POSITION
+2024-05-03T08:16:17.581622Z	   31 Query	SELECT @@session.transaction_isolation
+2024-05-03T08:16:18.262448Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.COLUMNS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='Datetime' ORDER BY ORDINAL_POSITION
+2024-05-03T08:16:18.273431Z	   31 Query	/* ApplicationName=DBeaver 24.0.1 - Main */ SELECT x.* FROM prisma_sandbox.`Datetime` x
+LIMIT 0, 200
+2024-05-03T08:16:18.286840Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT * FROM information_schema.STATISTICS WHERE TABLE_SCHEMA='prisma_sandbox' AND TABLE_NAME='Datetime' ORDER BY TABLE_NAME,INDEX_NAME,SEQ_IN_INDEX
+2024-05-03T08:16:18.300319Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT kc.CONSTRAINT_NAME,kc.TABLE_NAME,kc.COLUMN_NAME,kc.ORDINAL_POSITION
+FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE kc WHERE kc.TABLE_SCHEMA='prisma_sandbox' AND kc.REFERENCED_TABLE_NAME IS NULL AND kc.TABLE_NAME='Datetime'
+ORDER BY kc.CONSTRAINT_NAME,kc.ORDINAL_POSITION
+2024-05-03T08:16:18.313406Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT cc.CONSTRAINT_NAME, cc.CHECK_CLAUSE, tc.TABLE_NAME
+FROM (SELECT CONSTRAINT_NAME, CHECK_CLAUSE
+FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS
+WHERE CONSTRAINT_SCHEMA = 'prisma_sandbox'
+ORDER BY CONSTRAINT_NAME) cc,
+(SELECT TABLE_NAME, CONSTRAINT_NAME
+FROM INFORMATION_SCHEMA.TABLE_CONSTRAINTS
+WHERE TABLE_SCHEMA = 'prisma_sandbox' AND TABLE_NAME='Datetime') tc
+WHERE cc.CONSTRAINT_NAME = tc.CONSTRAINT_NAME
+ORDER BY cc.CONSTRAINT_NAME
+2024-05-03T08:16:18.317537Z	   32 Query	/* ApplicationName=DBeaver 24.0.1 - Metadata */ SELECT DISTINCT A.REFERENCED_TABLE_SCHEMA AS PKTABLE_CAT,NULL AS PKTABLE_SCHEM, A.REFERENCED_TABLE_NAME AS PKTABLE_NAME, A.REFERENCED_COLUMN_NAME AS PKCOLUMN_NAME, A.TABLE_SCHEMA AS FKTABLE_CAT, NULL AS FKTABLE_SCHEM, A.TABLE_NAME AS FKTABLE_NAME, A.COLUMN_NAME AS FKCOLUMN_NAME, A.ORDINAL_POSITION AS KEY_SEQ,CASE WHEN R.UPDATE_RULE='CASCADE' THEN 0 WHEN R.UPDATE_RULE='SET NULL' THEN 2 WHEN R.UPDATE_RULE='SET DEFAULT' THEN 4 WHEN R.UPDATE_RULE='RESTRICT' THEN 1 WHEN R.UPDATE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS UPDATE_RULE,CASE WHEN R.DELETE_RULE='CASCADE' THEN 0 WHEN R.DELETE_RULE='SET NULL' THEN 2 WHEN R.DELETE_RULE='SET DEFAULT' THEN 4 WHEN R.DELETE_RULE='RESTRICT' THEN 1 WHEN R.DELETE_RULE='NO ACTION' THEN 1 ELSE 1 END  AS DELETE_RULE, A.CONSTRAINT_NAME AS FK_NAME, R.UNIQUE_CONSTRAINT_NAME AS PK_NAME,7 AS DEFERRABILITY FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE A JOIN INFORMATION_SCHEMA.TABLE_CONSTRAINTS B USING (CONSTRAINT_NAME, TABLE_NAME) JOIN INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS R ON (R.CONSTRAINT_NAME = B.CONSTRAINT_NAME AND R.TABLE_NAME = B.TABLE_NAME AND R.CONSTRAINT_SCHEMA = B.TABLE_SCHEMA) WHERE B.CONSTRAINT_TYPE = 'FOREIGN KEY' AND A.TABLE_SCHEMA = 'prisma_sandbox' AND A.TABLE_NAME='Datetime' AND A.REFERENCED_TABLE_SCHEMA IS NOT NULL ORDER BY A.REFERENCED_TABLE_SCHEMA, A.REFERENCED_TABLE_NAME, A.ORDINAL_POSITION
+2024-05-03T08:17:03.100843Z	   36 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:17:03.102725Z	   36 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:03.103873Z	   37 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:17:03.104547Z	   37 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:03.104774Z	   36 Quit	
+2024-05-03T08:17:03.117619Z	   37 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:03.117848Z	   37 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:03.117875Z	   37 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-03T08:17:19.041827Z	   38 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:17:19.044028Z	   38 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:19.044804Z	   39 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:17:19.045880Z	   39 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:19.046007Z	   38 Quit	
+2024-05-03T08:17:19.058019Z	   39 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:19.058366Z	   39 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:19.058392Z	   39 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-03T08:17:25.443776Z	   40 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:17:25.444426Z	   40 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:25.444750Z	   41 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:17:25.444869Z	   41 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:25.444948Z	   40 Quit	
+2024-05-03T08:17:25.459175Z	   41 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:25.460347Z	   41 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:25.460394Z	   41 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-03T08:17:34.790863Z	   42 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:17:34.791684Z	   42 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:34.792352Z	   43 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:17:34.792491Z	   43 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:34.792594Z	   42 Quit	
+2024-05-03T08:17:34.806025Z	   43 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:34.806566Z	   43 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = ?
+2024-05-03T08:17:34.806596Z	   43 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+2024-05-03T08:17:55.045547Z	   44 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:17:55.046512Z	   44 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:55.047015Z	   45 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:17:55.047136Z	   45 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:17:55.047644Z	   44 Quit	
+2024-05-03T08:17:55.061283Z	   45 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`time` = ?
+2024-05-03T08:17:55.061475Z	   45 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00'
+2024-05-03T08:18:20.966572Z	   46 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:18:20.967295Z	   46 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:20.968003Z	   47 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:18:20.968367Z	   47 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:20.968455Z	   46 Quit	
+2024-05-03T08:18:20.987950Z	   47 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:20.989048Z	   47 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:20.989204Z	   47 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:18:44.012941Z	   48 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:18:44.014007Z	   48 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:44.014804Z	   49 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:18:44.015024Z	   49 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:44.015164Z	   48 Quit	
+2024-05-03T08:18:44.025937Z	   49 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:44.026281Z	   49 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:44.026303Z	   49 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:18:49.590536Z	   50 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:18:49.591280Z	   50 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:49.591688Z	   51 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:18:49.591824Z	   51 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:49.591913Z	   50 Quit	
+2024-05-03T08:18:49.593217Z	   51 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:49.593307Z	   51 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:49.593326Z	   51 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:18:57.717643Z	   52 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:18:57.718486Z	   52 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:57.718976Z	   53 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:18:57.719181Z	   53 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:18:57.719331Z	   52 Quit	
+2024-05-03T08:18:57.730039Z	   53 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:57.730676Z	   53 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:18:57.730699Z	   53 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:20:31.366379Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`,
+    `prisma_sandbox`.`Datetime`.`date`,
+    `prisma_sandbox`.`Datetime`.`time`
+FROM `prisma_sandbox`.`Datetime`
+WHERE (
+        `prisma_sandbox`.`Datetime`.`date` = "2024-01-01 00:00:00 UTC"
+        AND `prisma_sandbox`.`Datetime`.`time` = "2024-01-01 12:00:00 UTC"
+    )
+LIMIT 0, 200
+2024-05-03T08:20:32.075509Z	   33 Query	SHOW WARNINGS
+2024-05-03T08:20:32.189584Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-03T08:20:46.680393Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`,
+    `prisma_sandbox`.`Datetime`.`date`,
+    `prisma_sandbox`.`Datetime`.`time`
+FROM `prisma_sandbox`.`Datetime`
+WHERE `prisma_sandbox`.`Datetime`.`date` = "2024-01-01 00:00:00 UTC"
+LIMIT 0, 200
+2024-05-03T08:20:46.805531Z	   33 Query	SHOW WARNINGS
+2024-05-03T08:20:46.873108Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-03T08:20:59.985330Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`,
+    `prisma_sandbox`.`Datetime`.`date`,
+    `prisma_sandbox`.`Datetime`.`time`
+FROM `prisma_sandbox`.`Datetime`
+WHERE `prisma_sandbox`.`Datetime`.`time` = "2024-01-01 12:00:00 UTC"
+    
+LIMIT 0, 200
+2024-05-03T08:21:00.077244Z	   33 Query	SHOW WARNINGS
+2024-05-03T08:21:00.180739Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-03T08:21:47.286133Z	   54 Connect	root@localhost on prisma_sandbox using TCP/IP
+2024-05-03T08:21:47.293105Z	   54 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:21:47.294972Z	   55 Connect	root@localhost on prisma_sandbox using Socket
+2024-05-03T08:21:47.295569Z	   55 Query	SELECT @@socket, @@max_allowed_packet, @@wait_timeout
+2024-05-03T08:21:47.295731Z	   54 Quit	
+2024-05-03T08:21:47.302650Z	   55 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:21:47.302925Z	   55 Prepare	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = ? AND `prisma_sandbox`.`Datetime`.`time` = ?)
+2024-05-03T08:21:47.303118Z	   55 Execute	SELECT `prisma_sandbox`.`Datetime`.`id`, `prisma_sandbox`.`Datetime`.`date`, `prisma_sandbox`.`Datetime`.`time` FROM `prisma_sandbox`.`Datetime` WHERE (`prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00' AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+2024-05-03T08:22:51.578485Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`,
+    `prisma_sandbox`.`Datetime`.`date`,
+    `prisma_sandbox`.`Datetime`.`time`
+FROM `prisma_sandbox`.`Datetime`
+WHERE `prisma_sandbox`.`Datetime`.`time` = "2024-01-01 12:00:00"
+    
+LIMIT 0, 200
+2024-05-03T08:22:51.674000Z	   33 Query	SHOW WARNINGS
+2024-05-03T08:22:51.733323Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-03T08:23:14.485854Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT `prisma_sandbox`.`Datetime`.`id`,
+    `prisma_sandbox`.`Datetime`.`date`,
+    `prisma_sandbox`.`Datetime`.`time`
+FROM `prisma_sandbox`.`Datetime`
+WHERE (
+        `prisma_sandbox`.`Datetime`.`date` = '2024-01-01 00:00:00'
+        AND `prisma_sandbox`.`Datetime`.`time` = '2024-01-01 12:00:00')
+LIMIT 0, 200
+2024-05-03T08:23:14.688211Z	   33 Query	SHOW WARNINGS
+2024-05-03T08:23:14.927949Z	   33 Query	/* ApplicationName=DBeaver 24.0.1 - SQLEditor <Script-46.sql> */ SELECT DATABASE()
+2024-05-03T09:04:15.599870Z	   33 Quit	
+2024-05-03T09:04:29.416531Z	   31 Quit	
+2024-05-03T09:04:29.416532Z	   32 Quit	
